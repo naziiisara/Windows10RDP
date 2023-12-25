@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: windows-2022
-    timeout-minutes: 360
+    timeout-minutes: 18000
 
     steps:
     - name: Download Program Ngrok.
@@ -18,9 +18,9 @@ jobs:
     - name: Extrak Ngrok File.
       run: Expand-Archive ngrok.zip
     - name: Menghubungkan Ke Ngrok Account.
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: .\ngrok\ngrok.exe authtoken $Env:241pmXhli5SLtYxhrrqZoZcfcMm_3hcwxYTVtpFwdvGGFv3d
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+        NGROK_AUTH_TOKEN: ${{ secrets.241pmXhli5SLtYxhrrqZoZcfcMm_3hcwxYTVtpFwdvGGFv3d }}
     - name: Activated RDP.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
